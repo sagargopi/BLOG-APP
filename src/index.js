@@ -1,17 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom/client'; // Updated to 'react-dom/client' for React 18
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+// If you are using service workers, ensure the import path is correct
+// import registerServiceWorker from './Components/Services'; 
 
+// Create root for React 18
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// Render the app wrapped in BrowserRouter for routing
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <React.StrictMode>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// Uncomment the next line if you want to use the service worker
+// registerServiceWorker();
